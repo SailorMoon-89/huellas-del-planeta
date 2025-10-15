@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huellas del Planeta - Fauna Extraordinaria</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            animation: gradientShift 8s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); }
+            50% { background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #4facfe 100%); }
+        }
+        
+        .animal-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+        }
+        
+        .animal-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+        
+        .ecosystem-section {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .pulse-glow {
+            animation: pulseGlow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes pulseGlow {
+            from { box-shadow: 0 0 20px rgba(102, 126, 234, 0.4); }
+            to { box-shadow: 0 0 40px rgba(102, 126, 234, 0.8); }
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.2) rotate(5deg);
+        }
+        
+        .nav-glass {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .ecosystem-bg-selva { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); }
+        .ecosystem-bg-oceano { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .ecosystem-bg-sabana { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .ecosystem-bg-polar { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
+        .ecosystem-bg-desierto { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); }
+    </style>
+</head>
+<body class="h-full font-sans">
+    <!-- Navigation -->
+    <nav class="nav-glass fixed w-full top-0 z-50 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <span class="text-3xl floating-element">🐾</span>
+                <h1 class="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                    Huellas del Planeta
+                </h1>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#inicio" class="text-gray-700 hover:text-purple-600 font-medium transition-colors">Inicio</a>
+                <a href="#ecosistemas" class="text-gray-700 hover:text-purple-600 font-medium transition-colors">Ecosistemas</a>
+                <a href="#contacto" class="text-gray-700 hover:text-purple-600 font-medium transition-colors">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-bg min-h-screen flex items-center justify-center text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="floating-element absolute top-20 left-10 text-6xl">🦋</div>
+            <div class="floating-element absolute top-40 right-20 text-5xl" style="animation-delay: -2s;">🌺</div>
+            <div class="floating-element absolute bottom-40 left-20 text-7xl" style="animation-delay: -4s;">🌿</div>
+            <div class="floating-element absolute bottom-20 right-10 text-6xl" style="animation-delay: -1s;">🦜</div>
+        </div>
+        <div class="text-center z-10 px-6">
+            <h1 class="text-6xl md:text-8xl font-bold mb-6 pulse-glow">🐾 Huellas del Planeta</h1>
+            <p class="text-2xl md:text-3xl mb-8 opacity-90">Descubre la Fauna Más Extraordinaria del Mundo</p>
+            <button onclick="document.getElementById('ecosistemas').scrollIntoView({behavior: 'smooth'})" 
+                    class="bg-white text-purple-600 px-8 py-4 rounded-full text-xl font-bold hover:bg-opacity-90 transition-all transform hover:scale-105">
+                Explorar Ecosistemas 🌍
+            </button>
+        </div>
+    </section>
+
+    <!-- Ecosystems Section -->
+    <section id="ecosistemas" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-5xl font-bold text-center mb-16 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                Ecosistemas Extraordinarios
+            </h2>
+
+            <!-- Selva Tropical -->
+            <div class="ecosystem-section rounded-3xl p-8 mb-16 ecosystem-bg-selva">
+                <h3 class="text-4xl font-bold text-white mb-8 text-center">🌿 Selva Tropical</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+                    <!-- Jaguar -->
+                    <div class="animal-card rounded-2xl overflow-hidden shadow-xl">
+                        <div class="h-40 bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center">
+                            <span class="text-6xl">🐆</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-xl font-bold mb-2">Jaguar</h4>
+                            <p class="text-sm text-gray-600 mb-3">El felino más poderoso de América</p>
+                            <button class="info-btn w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded-lg font-medium" data-animal="jaguar">
+                                Descubrir
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Quetzal -->
+                    <div class="animal-card rounded-2xl overflow-hidden shadow-xl">
+                        <div class="h-40 bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center">
+                            <span class="text-6xl">🦜</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-xl font-bold mb-2">Quetzal</h4>
+                            <p class="text-sm text-gray-600 mb-3">Ave sagrada de los mayas</p>
+                            <button class="info-btn w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded-lg font-medium" data-animal="quetzal">
+                                Descubrir
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Perezoso -->
+                    <div class="animal-card rounded-2xl overflow-hidden shadow-xl">
+                        <div class="h-40 bg-gradient-to-br from-green-400 to-lime-500 flex items-center justify-center">
+                            <span class="text-6xl">🦥</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-xl font-bold mb-2">Perezoso</h4>
+                            <p class="text-sm text-gray-600 mb-3">El mamífero más lento del mundo</p>
+                            <button class="info-btn w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded-lg font-medium" data-animal="perezoso">
+                                Descubrir
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Rana Venenosa -->
+                    <div class="animal-card rounded-2xl overflow-hidden shadow-xl">
+                        <div class="h-40 bg-gradient-to-br from-red-400 to-pink-500 flex items-center justify-center">
+                            <span class="text-6xl">🐸</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-xl font-bold mb-2">Rana Venenosa</h4>
+                            <p class="text-sm text-gray-600 mb-3">Pequeña pero letal</p>
+                            <button class="info-btn w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded-lg font-medium" data-animal="rana_venenosa">
+                                Descubrir
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Anaconda -->
+                    <div class="animal-card rounded-2xl overflow-hidden shadow-xl">
+                        <div class="h-40 bg-gradient-to-br from-gray-600 to-green-700 flex items-center justify-center">
+                            <span class="text-6xl">🐍</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-xl font-bold mb-2">Anaconda</h4>
+                            <p class="text-sm text-gray-600 mb-3">La serpiente más pesada</p>
+                            <button class="info-btn w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded-lg font-medium" data-animal="anaconda">
+                                Descubrir
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Océano -->
+            <div class="ecosystem-section rounded-3xl p-8 mb-16 ecosystem-bg-oceano">
+                <h3 class="text-4xl font-bold text-white mb-8 text-center">🌊 Océano</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+                    <!-- Ballena Azul -->
+                    <div class="animal-card rounded-2xl overflow-hidden shadow-xl">
+                        <div class="h-40 bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center">
+                            <span class="text-6xl">🐋</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-xl font-bold mb-2">Ballena Azul</h4>
+                            <p class="text-sm text-gray-600 mb-3">El animal más grande del planeta</p>
+                            <button class="info-btn w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg font-medium" data-animal="ballena_azul">
+                                Descubrir
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Tiburón Blanco -->
+                    <div class="animal-card rounded-2xl overflow-hidden shadow-xl">
+                        <div class="h-40 bg-gradient-to-br from-gray-400 to-blue-600 flex items-center justify-center">
+                            <span class="text-6xl">🦈</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-xl font-bold mb-2">Tiburón Blanco</h4>
+                            <p class="text-sm text-gray-600 mb-3">Depredador supremo marino</p>
+                            <button class="info-btn w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg font-medium" data-animal="tiburon_blanco">
+                                Descubrir
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Pulpo Gigante -->
+                    <div class="animal-card rounded-2xl overflow-hidden shadow-xl">
+                        <div class="h-40 bg-gradient-to-br from-purple-400 to-indigo-500 flex items-center justify-center">
+                            <span class="text-6xl">🐙</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-xl font-bold mb-2">Pulpo Gigante</h4>
+                            <p class="text-sm text-gray-600 mb-3">Maestro del camuflaje</p>
+                            <button class="info-btn w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg font-medium" data-animal="pulpo_gigante">
+                                Descubrir
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Mantarraya -->
+                    <div class="animal-card rounded-2xl overflow-hidden shadow-xl">
+                        <div class="h-40 bg-gradient-to-br from-teal-400 to-blue-500 flex items-center justify-center">
+                            <span class="text-6xl">🐠</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-xl font-bold mb-2">Mantarraya</h4>
+                            <p class="text-sm text-gray-600 mb-3">Gigante gentil del océano</p>
+                            <button class="info-btn w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg font-medium" data-animal="mantarraya">
+                                Descubrir
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Delfín -->
+                    <div class="animal-card rounded-2xl overflow-hidden shadow-xl">
+                        <div class="h-40 bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center">
+                            <span class="text-6xl">🐬</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-xl font-bold mb-2">Delfín</h4>
+                            <p class="text-sm text-gray-600 mb-3">Inteligencia marina</p>
+                            <button class="info-btn w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg font-medium" data-animal="delfin">
+                                Descubrir
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sabana -->
+            <div class="ecosystem-section rounded-3xl p-8 mb-16 ecosystem-bg-sabana">
+                <h3 class="text-4xl font-bold text-white mb-8 text-center">🌾 Sabana</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+                    <!-- León -->
+                    <div class="animal-card rounded-2xl overflow-hidden shadow-xl">
+                        <div class="h-40 bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center">
+                            <span class="text-6xl">🦁</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-xl font-bold mb-2">León</h4>
+                            <p class="text-sm text-gray-600 mb-3">Rey de la sabana</p>
+                            <button class="info-btn w-full bg-pink-500 hover:bg-pink-600 text-white py-2 rounded-lg font-medium" data-animal="leon">
+                                Descubrir
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Elefante -->
+                    <div class="animal-card rounded-2xl overflow-hidden shadow-xl">
+                        <div class="h-40 bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center">
+                            <span class="text-6xl">🐘</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-xl font-bold mb-2">Elefante</h4>
+                            <p class="text-sm text-gray-600 mb-3">Gigante gentil terrestre</p>
+                            <button class="info-btn w-full bg-pink-500 hover:bg-pink-600 text-white py-2 rounded-lg font-medium" data-animal="elefante">
+                                Descubrir
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Guepardo -->
+                    <div class="animal-card rounded-2xl overflow-hidden shadow-xl">
+                        <div class="h-40 bg-gradient-to-br from-yellow-500 to-orange-600 flex items-center justify-center">
+                            <span class="text-6xl">🐆</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-xl font-bold mb-2">Guepardo</h4>
+                            <p class="text-sm text-gray-600 mb-3">El animal terrestre más rápido</p>
+                            <button class="info-btn w-full bg-pink-500 hover:bg-pink-600 text-white py-2 rounded-lg font-medium" data-animal="guepardo">
+                                Descubrir
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Jirafa -->
+                    <div class="animal-card rounded-2xl overflow-hidden shadow-xl">
+                        <div class="h-40 bg-gradient-to-br from-yellow-300 to-orange-400 flex items-center justify-center">
+                            <span class="text-6xl">🦒</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-xl font-bold mb-2">Jirafa</h4>
+                            <p class="text-sm text-gray-600 mb-3">El animal más alto del mundo</p>
+                            <button class="info-btn w-full bg-pink-500 hover:bg-pink-600 text-white py-2 rounded-lg font-medium" data-animal="jirafa">
+                                Descubrir
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Rinoceronte -->
+                    <div class="animal-card rounded-2xl overflow-hidden shadow-xl">
+                        <div class="h-40 bg-gradient-to-br from-gray-500 to-gray-700 flex items-center justify-center">
+                            <span class="text-6xl">🦏</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-xl font-bold mb-2">Rinoceronte</h4>
+                            <p class="text-sm text-gray-600 mb-3">Tanque viviente</p>
+                            <button class="info-btn w-full bg-pink-500 hover:bg-pink-600 text-white py-2 rounded-lg font-medium" data-animal="rinoceronte">
+                                Descubrir
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Polar -->
+            <div class="ecosystem-section rounded-3xl p-8 mb-16 ecosystem-bg-polar">
+                <h3 class="text-4xl font-bold text-gray-800 mb-8 text-center">❄️ Región Polar</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+                    <!-- Oso Polar -->
+                    <div class="animal-card rounded-2xl overflow-hidden shadow-xl">
+                        <div class="h-40 bg-gradient-to-br from-white to-blue-200 flex items-center justify-center">
+                            <span class="text-6xl">🐻‍❄️</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-xl font-bold mb-2">Oso Polar</h4>
+                            <p class="text-sm text-gray-600 mb-3">Señor del Ártico</p>
+                            <button class="info-btn w-full bg-cyan-500 hover:bg-cyan-600 text-white py-2 rounded-lg font-medium" data-animal="oso_polar">
+                                Descubrir
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Pingüino Emperador -->
+                    <div class="animal-card rounded-2xl overflow-hidden shadow-xl">
+                        <div class="h-40 bg-gradient-to-br from-gray-300 to-blue-400 flex items-center justify-center">
+                            <span class="text-6xl">🐧</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-xl font-bold mb-2">Pingüino Emperador</h4>
+                            <p class="text-sm text-gray-600 mb-3">Padre ejemplar antártico</p>
+                            <button class="info-btn w-full bg-cyan-500 hover:bg-cyan-600 text-white py-2 rounded-lg font-medium" data-animal="pinguino_emperador">
+                                Descubrir
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Foca Leopardo -->
+                    <div class="animal-card rounded-2xl overflow-hidden shadow-xl">
+                        <div class="h-40 bg-gradient-to-br from-gray-400 to-blue-500 flex items-center justify-center">
+                            <span class="text-6xl">🦭</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-xl font-bold mb-2">Foca Leopardo</h4>
+                            <p class="text-sm text-gray-600 mb-3">Depredador antártico</p>
+                            <button class="info-btn w-full bg-cyan-500 hover:bg-cyan-600 text-white py-2 rounded-lg font-medium" data-animal="foca_leopardo">
+                                Descubrir
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Zorro Ártico -->
+                    <div class="animal-card rounded-2xl overflow-hidden shadow-xl">
+                        <div class="h-40 bg-gradient-to-br from-white to-gray-300 flex items-center justify-center">
+                            <span class="text-6xl">🦊</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-xl font-bold mb-2">Zorro Ártico</h4>
+                            <p class="text-sm text-gray-600 mb-3">Superviviente del frío</p>
+                            <button class="info-btn w-full bg-cyan-500 hover:bg-cyan-600 text-white py-2 rounded-lg font-medium" data-animal="zorro_artico">
+                                Descubrir
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Morsa -->
+                    <div class="animal-card rounded-2xl overflow-hidden shadow-xl">
+                        <div class="h-40 bg-gradient-to-br from-brown-400 to-gray-500 flex items-center justify-center">
+                            <span class="text-6xl">🦭</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-xl font-bold mb-2">Morsa</h4>
+                            <p class="text-sm text-gray-600 mb-3">Gigante con colmillos</p>
+                            <button class="info-btn w-full bg-cyan-500 hover:bg-cyan-600 text-white py-2 rounded-lg font-medium" data-animal="morsa">
+                                Descubrir
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desierto -->
+            <div class="ecosystem-section rounded-3xl p-8 mb-16 ecosystem-bg-desierto">
+                <h3 class="text-4xl font-bold text-gray-800 mb-8 text-center">🏜️ Desierto</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+                    <!-- Camello -->
+                    <div class="animal-card rounded-2xl overflow-hidden shadow-xl">
+                        <div class="h-40 bg-gradient-to-br from-yellow-300 to-orange-400 flex items-center justify-center">
+                            <span class="text-6xl">🐪</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-xl font-bold mb-2">Camello</h4>
+                            <p class="text-sm text-gray-600 mb-3">Barco del desierto</p>
+                            <button class="info-btn w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-lg font-medium" data-animal="camello">
+                                Descubrir
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Escorpión -->
+                    <div class="animal-card rounded-2xl overflow-hidden shadow-xl">
+                        <div class="h-40 bg-gradient-to-br from-red-400 to-orange-500 flex items-center justify-center">
+                            <span class="text-6xl">🦂</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-xl font-bold mb-2">Escorpión</h4>
+                            <p class="text-sm text-gray-600 mb-3">Guerrero del desierto</p>
+                            <button class="info-btn w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-lg font-medium" data-animal="escorpion">
+                                Descubrir
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Fennec -->
+                    <div class="animal-card rounded-2xl overflow-hidden shadow-xl">
+                        <div class="h-40 bg-gradient-to-br from-yellow-200 to-orange-300 flex items-center justify-center">
+                            <span class="text-6xl">🦊</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-xl font-bold mb-2">Fennec</h4>
+                            <p class="text-sm text-gray-600 mb-3">Zorro de orejas gigantes</p>
+                            <button class="info-btn w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-lg font-medium" data-animal="fennec">
+                                Descubrir
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Serpiente de Cascabel -->
+                    <div class="animal-card rounded-2xl overflow-hidden shadow-xl">
+                        <div class="h-40 bg-gradient-to-br from-brown-400 to-red-500 flex items-center justify-center">
+                            <span class="text-6xl">🐍</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-xl font-bold mb-2">Serpiente Cascabel</h4>
+                            <p class="text-sm text-gray-600 mb-3">Alarma viviente</p>
+                            <button class="info-btn w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-lg font-medium" data-animal="serpiente_cascabel">
+                                Descubrir
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Suricata -->
+                    <div class="animal-card rounded-2xl overflow-hidden shadow-xl">
+                        <div class="h-40 bg-gradient-to-br from-yellow-400 to-brown-400 flex items-center justify-center">
+                            <span class="text-6xl">🦫</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-xl font-bold mb-2">Suricata</h4>
+                            <p class="text-sm text-gray-600 mb-3">Centinela del desierto</p>
+                            <button class="info-btn w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-lg font-medium" data-animal="suricata">
+                                Descubrir
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-20 bg-gradient-to-br from-purple-600 to-blue-600 text-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-5xl font-bold text-center mb-16">Conecta con Nosotros</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-3xl font-bold mb-6">🌍 Nuestra Misión</h3>
+                    <p class="text-xl mb-6 opacity-90">
+                        Educamos y concientizamos sobre la increíble biodiversidad de nuestro planeta, 
+                        promoviendo la conservación de especies extraordinarias para las futuras generaciones.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-2xl">📧</span>
+                            <span class="text-lg">info@huellasdelplaneta.com</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-2xl">📱</span>
+                            <span class="text-lg">+1 (555) 123-WILD</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-2xl">🌐</span>
+                            <span class="text-lg">www.huellasdelplaneta.com</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-bold mb-6">🔗 Síguenos</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <a href="#" class="social-icon bg-white bg-opacity-20 p-4 rounded-2xl text-center hover:bg-opacity-30 transition-all">
+                            <div class="text-3xl mb-2">📘</div>
+                            <div class="font-medium">Facebook</div>
+                            <div class="text-sm opacity-75">@HuellasPlaneta</div>
+                        </a>
+                        <a href="#" class="social-icon bg-white bg-opacity-20 p-4 rounded-2xl text-center hover:bg-opacity-30 transition-all">
+                            <div class="text-3xl mb-2">📷</div>
+                            <div class="font-medium">Instagram</div>
+                            <div class="text-sm opacity-75">@huellas_planeta</div>
+                        </a>
+                        <a href="#" class="social-icon bg-white bg-opacity-20 p-4 rounded-2xl text-center hover:bg-opacity-30 transition-all">
+                            <div class="text-3xl mb-2">🐦</div>
+                            <div class="font-medium">Twitter</div>
+                            <div class="text-sm opacity-75">@HuellasPlaneta</div>
+                        </a>
+                        <a href="#" class="social-icon bg-white bg-opacity-20 p-4 rounded-2xl text-center hover:bg-opacity-30 transition-all">
+                            <div class="text-3xl mb-2">📺</div>
+                            <div class="font-medium">YouTube</div>
+                            <div class="text-sm opacity-75">Huellas del Planeta</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Animal Details -->
+    <div id="animal-modal" class="fixed inset-0 bg-black bg-opacity-70 hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl max-w-4xl w-full max-h-[90%] overflow-y-auto shadow-2xl">
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 id="modal-title" class="text-4xl font-bold text-gray-800"></h2>
+                    <button id="close-modal" class="text-gray-500 hover:text-gray-700 text-3xl bg-gray-100 hover:bg-gray-200 rounded-full w-12 h-12 flex items-center justify-center">✕</button>
+                </div>
+                <div id="modal-content" class="space-y-6">
+                    <!-- Content will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Comprehensive animal data
+        const animalData = {
+            // SELVA
+            jaguar: {
+                name: "Jaguar",
+                emoji: "🐆",
+                classification: "Mamífero - Felidae",
+                physicalCharacteristics: {
+                    size: "1.2-1.8 metros de longitud",
+                    weight: "56-96 kg",
+                    color: "Amarillo dorado con rosetas negras",
+                    skin: "Pelaje corto y denso",
+                    bodyParts: "Mandíbulas poderosas, garras retráctiles, cola larga"
+                },
+                habitat: "Selvas tropicales de América Central y del Sur, cerca de ríos",
+                diet: "Carnívoro - Caimanes, peces, tapires, pecaríes",
+                behavior: "Cazador nocturno solitario, excelente nadador, marca territorio con orina",
+                reproduction: "Gestación de 93-105 días, 1-4 cachorros por camada",
+                socialMedia: {
+                    instagram: "@jaguar_wildcat",
+                    facebook: "Jaguar Conservation",
+                    twitter: "@JaguarWild"
+                }
+            },
+            quetzal: {
+                name: "Quetzal",
+                emoji: "🦜",
+                classification: "Ave - Trogonidae",
+                physicalCharacteristics: {
+                    size: "35-40 cm de longitud",
+                    weight: "200-225 gramos",
+                    color: "Verde esmeralda brillante con pecho rojo",
+                    skin: "Plumas iridiscentes",
+                    bodyParts: "Cola larga (hasta 65 cm en machos), pico amarillo"
+                },
+                habitat: "Bosques nubosos de montaña en Centroamérica",
+                diet: "Omnívoro - Frutas, insectos, pequeños vertebrados",
+                behavior: "Vuela en patrones ondulados, anida en troncos huecos",
+                reproduction: "2-4 huevos azul pálido, incubación de 17-19 días",
+                socialMedia: {
+                    instagram: "@quetzal_sacred",
+                    facebook: "Quetzal Maya Bird",
+                    twitter: "@QuetzalBird"
+                }
+            },
+            perezoso: {
+                name: "Perezoso",
+                emoji: "🦥",
+                classification: "Mamífero - Bradypodidae",
+                physicalCharacteristics: {
+                    size: "50-60 cm de longitud",
+                    weight: "4-6 kg",
+                    color: "Gris-marrón con algas verdes",
+                    skin: "Pelaje largo y áspero",
+                    bodyParts: "Garras largas y curvadas, brazos largos"
+                },
+                habitat: "Copas de árboles en selvas tropicales",
+                diet: "Herbívoro - Hojas, brotes, frutas",
+                behavior: "Se mueve extremadamente lento, duerme 15-20 horas diarias",
+                reproduction: "Gestación de 6 meses, 1 cría cada 1-2 años",
+                socialMedia: {
+                    instagram: "@slow_sloth_life",
+                    facebook: "Sloth Conservation",
+                    twitter: "@SlowSloth"
+                }
+            },
+            rana_venenosa: {
+                name: "Rana Venenosa",
+                emoji: "🐸",
+                classification: "Anfibio - Dendrobatidae",
+                physicalCharacteristics: {
+                    size: "1.5-6 cm de longitud",
+                    weight: "1-15 gramos",
+                    color: "Colores brillantes: azul, rojo, amarillo",
+                    skin: "Piel húmeda y lisa con glándulas venenosas",
+                    bodyParts: "Dedos con ventosas, ojos prominentes"
+                },
+                habitat: "Suelo húmedo de selvas tropicales",
+                diet: "Carnívoro - Hormigas, termitas, pequeños insectos",
+                behavior: "Activa durante el día, territorial, cuida sus crías",
+                reproduction: "Pone huevos en hojas, transporta renacuajos en su espalda",
+                socialMedia: {
+                    instagram: "@poison_dart_frog",
+                    facebook: "Toxic Frogs",
+                    twitter: "@PoisonFrog"
+                }
+            },
+            anaconda: {
+                name: "Anaconda",
+                emoji: "🐍",
+                classification: "Reptil - Boidae",
+                physicalCharacteristics: {
+                    size: "4-9 metros de longitud",
+                    weight: "30-250 kg",
+                    color: "Verde oliva con manchas negras",
+                    skin: "Escamas lisas y brillantes",
+                    bodyParts: "Cuerpo musculoso, cabeza pequeña, ojos y narinas en la parte superior"
+                },
+                habitat: "Ríos, pantanos y humedales de Sudamérica",
+                diet: "Carnívoro - Peces, aves, mamíferos, caimanes",
+                behavior: "Constrictora, excelente nadadora, caza por emboscada",
+                reproduction: "Ovovivípara, 20-40 crías por camada",
+                socialMedia: {
+                    instagram: "@anaconda_giant",
+                    facebook: "Giant Anaconda",
+                    twitter: "@AnacondaSnake"
+                }
+            },
+
+            // OCÉANO
+            ballena_azul: {
+                name: "Ballena Azul",
+                emoji: "🐋",
+                classification: "Mamífero - Balaenopteridae",
+                physicalCharacteristics: {
+                    size: "24-30 metros de longitud",
+                    weight: "100-200 toneladas",
+                    color: "Azul grisáceo con manchas claras",
+                    skin: "Piel lisa con pliegues ventrales",
+                    bodyParts: "Corazón del tamaño de un auto, lengua de 3 toneladas"
+                },
+                habitat: "Océanos de todo el mundo, migra entre aguas polares y tropicales",
+                diet: "Carnívoro - Principalmente krill (4 toneladas diarias)",
+                behavior: "Migra largas distancias, se comunica con sonidos de baja frecuencia",
+                reproduction: "Gestación de 10-12 meses, 1 cría cada 2-3 años",
+                socialMedia: {
+                    instagram: "@blue_whale_giant",
+                    facebook: "Blue Whale Conservation",
+                    twitter: "@BlueWhaleGiant"
+                }
+            },
+            tiburon_blanco: {
+                name: "Tiburón Blanco",
+                emoji: "🦈",
+                classification: "Pez cartilaginoso - Lamnidae",
+                physicalCharacteristics: {
+                    size: "4-6 metros de longitud",
+                    weight: "680-1100 kg",
+                    color: "Gris en el dorso, blanco en el vientre",
+                    skin: "Piel áspera con dentículos dérmicos",
+                    bodyParts: "300 dientes triangulares, aletas poderosas"
+                },
+                habitat: "Aguas costeras templadas y tropicales",
+                diet: "Carnívoro - Focas, peces, tortugas marinas",
+                behavior: "Cazador solitario, puede saltar fuera del agua",
+                reproduction: "Ovovivíparo, 2-10 crías por camada",
+                socialMedia: {
+                    instagram: "@great_white_shark",
+                    facebook: "Great White Conservation",
+                    twitter: "@GreatWhiteShark"
+                }
+            },
+            pulpo_gigante: {
+                name: "Pulpo Gigante del Pacífico",
+                emoji: "🐙",
+                classification: "Molusco - Octopodidae",
+                physicalCharacteristics: {
+                    size: "3-5 metros de envergadura",
+                    weight: "15-71 kg",
+                    color: "Cambia de color (rojo, marrón, blanco)",
+                    skin: "Piel suave con cromatóforos",
+                    bodyParts: "8 brazos con ventosas, 3 corazones, sangre azul"
+                },
+                habitat: "Fondos rocosos del Océano Pacífico Norte",
+                diet: "Carnívoro - Crustáceos, peces, tiburones pequeños",
+                behavior: "Maestro del camuflaje, muy inteligente, resuelve problemas",
+                reproduction: "Pone hasta 100,000 huevos, muere después del desove",
+                socialMedia: {
+                    instagram: "@giant_pacific_octopus",
+                    facebook: "Octopus Intelligence",
+                    twitter: "@GiantOctopus"
+                }
+            },
+            mantarraya: {
+                name: "Mantarraya",
+                emoji: "🐠",
+                classification: "Pez cartilaginoso - Mobulidae",
+                physicalCharacteristics: {
+                    size: "3-7 metros de envergadura",
+                    weight: "1-3 toneladas",
+                    color: "Negro en el dorso, blanco en el vientre",
+                    skin: "Piel lisa con mucus protector",
+                    bodyParts: "Aletas pectorales como alas, lóbulos cefálicos"
+                },
+                habitat: "Aguas tropicales y subtropicales, cerca de arrecifes",
+                diet: "Carnívoro - Plancton, peces pequeños, krill",
+                behavior: "Nada con movimientos ondulantes, forma grupos para alimentarse",
+                reproduction: "Ovovivípara, 1-2 crías cada 2-5 años",
+                socialMedia: {
+                    instagram: "@manta_ray_ocean",
+                    facebook: "Manta Ray Conservation",
+                    twitter: "@MantaRayOcean"
+                }
+            },
+            delfin: {
+                name: "Delfín Nariz de Botella",
+                emoji: "🐬",
+                classification: "Mamífero - Delphinidae",
+                physicalCharacteristics: {
+                    size: "2-4 metros de longitud",
+                    weight: "150-650 kg",
+                    color: "Gris con vientre más claro",
+                    skin: "Piel lisa y gomosa",
+                    bodyParts: "Hocico alargado, aleta dorsal curvada, melón para ecolocalización"
+                },
+                habitat: "Aguas costeras templadas y tropicales",
+                diet: "Carnívoro - Peces, calamares, crustáceos",
+                behavior: "Altamente social, usa ecolocalización, juega y salta",
+                reproduction: "Gestación de 12 meses, 1 cría cada 2-6 años",
+                socialMedia: {
+                    instagram: "@bottlenose_dolphin",
+                    facebook: "Dolphin Intelligence",
+                    twitter: "@DolphinSmart"
+                }
+            },
+
+            // SABANA
+            leon: {
+                name: "León",
+                emoji: "🦁",
+                classification: "Mamífero - Felidae",
+                physicalCharacteristics: {
+                    size: "1.4-2.5 metros de longitud",
+                    weight: "120-250 kg (machos), 110-180 kg (hembras)",
+                    color: "Dorado a marrón claro, melena oscura en machos",
+                    skin: "Pelaje corto y áspero",
+                    bodyParts: "Melena en machos, garras retráctiles, caninos de 7 cm"
+                },
+                habitat: "Sabanas, praderas y bosques abiertos de África",
+                diet: "Carnívoro - Ñus, cebras, búfalos, antílopes",
+                behavior: "Vive en manadas, las hembras cazan en grupo, rugido territorial",
+                reproduction: "Gestación de 110 días, 1-6 cachorros por camada",
+                socialMedia: {
+                    instagram: "@king_of_savanna",
+                    facebook: "Lion Pride Conservation",
+                    twitter: "@LionKing"
+                }
+            },
+            elefante: {
+                name: "Elefante Africano",
+                emoji: "🐘",
+                classification: "Mamífero - Elephantidae",
+                physicalCharacteristics: {
+                    size: "6-7 metros de longitud, 4 metros de altura",
+                    weight: "4-7 toneladas",
+                    color: "Gris con piel arrugada",
+                    skin: "Piel gruesa de 2.5 cm",
+                    bodyParts: "Trompa con 40,000 músculos, colmillos de marfil, orejas grandes"
+                },
+                habitat: "Sabanas, bosques y desiertos de África",
+                diet: "Herbívoro - Hierbas, cortezas, frutas (300 kg diarios)",
+                behavior: "Vive en manadas matriarcales, memoria excepcional, se baña en lodo",
+                reproduction: "Gestación de 22 meses, 1 cría cada 3-6 años",
+                socialMedia: {
+                    instagram: "@african_elephant",
+                    facebook: "Elephant Conservation",
+                    twitter: "@ElephantGiant"
+                }
+            },
+            guepardo: {
+                name: "Guepardo",
+                emoji: "🐆",
+                classification: "Mamífero - Felidae",
+                physicalCharacteristics: {
+                    size: "1.1-1.5 metros de longitud",
+                    weight: "21-72 kg",
+                    color: "Amarillo dorado con manchas negras sólidas",
+                    skin: "Pelaje corto y áspero",
+                    bodyParts: "Cuerpo aerodinámico, garras semi-retráctiles, 'lágrimas' negras"
+                },
+                habitat: "Sabanas abiertas y semi-desiertos de África",
+                diet: "Carnívoro - Gacelas, impalas, liebres",
+                behavior: "Cazador diurno, alcanza 120 km/h, no puede rugir",
+                reproduction: "Gestación de 90-95 días, 3-6 cachorros por camada",
+                socialMedia: {
+                    instagram: "@fastest_cat",
+                    facebook: "Cheetah Speed",
+                    twitter: "@CheetahFast"
+                }
+            },
+            jirafa: {
+                name: "Jirafa",
+                emoji: "🦒",
+                classification: "Mamífero - Giraffidae",
+                physicalCharacteristics: {
+                    size: "4.3-5.7 metros de altura",
+                    weight: "800-1930 kg",
+                    color: "Amarillo con manchas marrones irregulares",
+                    skin: "Pelaje corto con patrón único",
+                    bodyParts: "Cuello de 2 metros, lengua de 45 cm, corazón de 11 kg"
+                },
+                habitat: "Sabanas, praderas y bosques abiertos de África",
+                diet: "Herbívoro - Hojas de acacia (30 kg diarios)",
+                behavior: "Vive en grupos sueltos, duerme solo 2 horas, camina con paso elegante",
+                reproduction: "Gestación de 15 meses, 1 cría cada 20-28 meses",
+                socialMedia: {
+                    instagram: "@tallest_mammal",
+                    facebook: "Giraffe Conservation",
+                    twitter: "@GiraffeTall"
+                }
+            },
+            rinoceronte: {
+                name: "Rinoceronte Blanco",
+                emoji: "🦏",
+                classification: "Mamífero - Rhinocerotidae",
+                physicalCharacteristics: {
+                    size: "3.4-4.2 metros de longitud",
+                    weight: "1.4-3.6 toneladas",
+                    color: "Gris (no blanco)",
+                    skin: "Piel gruesa sin pelo",
+                    bodyParts: "Dos cuernos de queratina, labio cuadrado ancho"
+                },
+                habitat: "Sabanas y praderas del sur de África",
+                diet: "Herbívoro - Hierbas cortas (50 kg diarios)",
+                behavior: "Pasta en grupos, marca territorio con orina, se revuelca en lodo",
+                reproduction: "Gestación de 16 meses, 1 cría cada 2-4 años",
+                socialMedia: {
+                    instagram: "@white_rhino",
+                    facebook: "Rhino Conservation",
+                    twitter: "@RhinoWhite"
+                }
+            },
+
+            // POLAR
+            oso_polar: {
+                name: "Oso Polar",
+                emoji: "🐻‍❄️",
+                classification: "Mamífero - Ursidae",
+                physicalCharacteristics: {
+                    size: "2-3 metros de longitud",
+                    weight: "350-680 kg (machos), 150-250 kg (hembras)",
+                    color: "Pelaje blanco amarillento, piel negra",
+                    skin: "Pelaje denso e impermeable",
+                    bodyParts: "Patas palmeadas, garras no retráctiles, olfato excepcional"
+                },
+                habitat: "Hielo marino del Ártico",
+                diet: "Carnívoro - Focas (principalmente focas anilladas)",
+                behavior: "Cazador solitario, excelente nadador, hiberna parcialmente",
+                reproduction: "Gestación de 8 meses, 1-3 cachorros cada 3 años",
+                socialMedia: {
+                    instagram: "@polar_bear_arctic",
+                    facebook: "Polar Bear Conservation",
+                    twitter: "@PolarBearArctic"
+                }
+            },
+            pinguino_emperador: {
+                name: "Pingüino Emperador",
+                emoji: "🐧",
+                classification: "Ave - Spheniscidae",
+                physicalCharacteristics: {
+                    size: "100-130 cm de altura",
+                    weight: "22-45 kg",
+                    color: "Negro y blanco con parches amarillos en el cuello",
+                    skin: "Plumas densas e impermeables",
+                    bodyParts: "Aletas como remos, pico largo y curvado"
+                },
+                habitat: "Hielo antártico y aguas circundantes",
+                diet: "Carnívoro - Peces, calamares, krill",
+                behavior: "Forma colonias masivas, los machos incuban huevos, bucean hasta 500m",
+                reproduction: "1 huevo por temporada, incubación de 64 días",
+                socialMedia: {
+                    instagram: "@emperor_penguin",
+                    facebook: "Emperor Penguin Colony",
+                    twitter: "@EmperorPenguin"
+                }
+            },
+            foca_leopardo: {
+                name: "Foca Leopardo",
+                emoji: "🦭",
+                classification: "Mamífero - Phocidae",
+                physicalCharacteristics: {
+                    size: "2.4-3.5 metros de longitud",
+                    weight: "200-600 kg",
+                    color: "Gris plateado con manchas oscuras",
+                    skin: "Pelaje corto e impermeable",
+                    bodyParts: "Cabeza grande, mandíbulas poderosas, aletas posteriores largas"
+                },
+                habitat: "Aguas antárticas y subantárticas",
+                diet: "Carnívoro - Pingüinos, focas, peces, krill",
+                behavior: "Cazador solitario y agresivo, excelente nadador",
+                reproduction: "Gestación de 11 meses, 1 cría por año",
+                socialMedia: {
+                    instagram: "@leopard_seal",
+                    facebook: "Leopard Seal Antarctic",
+                    twitter: "@LeopardSeal"
+                }
+            },
+            zorro_artico: {
+                name: "Zorro Ártico",
+                emoji: "🦊",
+                classification: "Mamífero - Canidae",
+                physicalCharacteristics: {
+                    size: "46-68 cm de longitud",
+                    weight: "2.5-9 kg",
+                    color: "Blanco en invierno, marrón en verano",
+                    skin: "Pelaje denso que cambia estacionalmente",
+                    bodyParts: "Orejas pequeñas y redondeadas, cola esponjosa, patas peludas"
+                },
+                habitat: "Tundra ártica de América del Norte y Eurasia",
+                diet: "Omnívoro - Lemmings, aves, huevos, carroña",
+                behavior: "Almacena comida, forma parejas monógamas, migra siguiendo osos polares",
+                reproduction: "Gestación de 52 días, 5-25 cachorros por camada",
+                socialMedia: {
+                    instagram: "@arctic_fox",
+                    facebook: "Arctic Fox Tundra",
+                    twitter: "@ArcticFox"
+                }
+            },
+            morsa: {
+                name: "Morsa",
+                emoji: "🦭",
+                classification: "Mamífero - Odobenidae",
+                physicalCharacteristics: {
+                    size: "2.2-3.6 metros de longitud",
+                    weight: "400-2000 kg",
+                    color: "Marrón rojizo a gris",
+                    skin: "Piel gruesa con bigotes sensibles",
+                    bodyParts: "Colmillos de hasta 1 metro, bigotes (vibrisas), aletas como remos"
+                },
+                habitat: "Hielo marino y costas del Ártico",
+                diet: "Carnívoro - Almejas, mejillones, caracoles marinos",
+                behavior: "Forma grandes grupos en playas, usa colmillos para salir del agua",
+                reproduction: "Gestación de 15 meses, 1 cría cada 3 años",
+                socialMedia: {
+                    instagram: "@walrus_arctic",
+                    facebook: "Walrus Colony",
+                    twitter: "@WalrusArctic"
+                }
+            },
+
+            // DESIERTO
+            camello: {
+                name: "Camello Dromedario",
+                emoji: "🐪",
+                classification: "Mamífero - Camelidae",
+                physicalCharacteristics: {
+                    size: "2.2-3.4 metros de longitud",
+                    weight: "300-690 kg",
+                    color: "Marrón claro a oscuro",
+                    skin: "Pelaje áspero y lanoso",
+                    bodyParts: "Una joroba, pestañas largas, fosas nasales que se cierran"
+                },
+                habitat: "Desiertos de África del Norte y Medio Oriente",
+                diet: "Herbívoro - Plantas espinosas, hierbas secas, hojas",
+                behavior: "Puede beber 100 litros de agua, escupe cuando está molesto",
+                reproduction: "Gestación de 12-14 meses, 1 cría cada 2 años",
+                socialMedia: {
+                    instagram: "@desert_camel",
+                    facebook: "Camel Desert Ship",
+                    twitter: "@DesertCamel"
+                }
+            },
+            escorpion: {
+                name: "Escorpión del Desierto",
+                emoji: "🦂",
+                classification: "Arácnido - Scorpiones",
+                physicalCharacteristics: {
+                    size: "5-20 cm de longitud",
+                    weight: "10-100 gramos",
+                    color: "Amarillo a marrón oscuro",
+                    skin: "Exoesqueleto quitinoso",
+                    bodyParts: "Pinzas (quelíceros), cola con aguijón venenoso, 8 patas"
+                },
+                habitat: "Desiertos rocosos y arenosos",
+                diet: "Carnívoro - Insectos, arañas, pequeños vertebrados",
+                behavior: "Cazador nocturno, se entierra durante el día, fluorescente bajo luz UV",
+                reproduction: "Ovovivíparo, 25-35 crías que monta en su espalda",
+                socialMedia: {
+                    instagram: "@desert_scorpion",
+                    facebook: "Scorpion Desert",
+                    twitter: "@DesertScorpion"
+                }
+            },
+            fennec: {
+                name: "Fennec",
+                emoji: "🦊",
+                classification: "Mamífero - Canidae",
+                physicalCharacteristics: {
+                    size: "24-41 cm de longitud",
+                    weight: "0.68-1.6 kg",
+                    color: "Crema a rojizo pálido",
+                    skin: "Pelaje suave y denso",
+                    bodyParts: "Orejas enormes (15 cm), cola esponjosa, patas peludas"
+                },
+                habitat: "Desierto del Sahara y península arábiga",
+                diet: "Omnívoro - Insectos, huevos, frutas, raíces",
+                behavior: "Nocturno, vive en madrigueras familiares, salta hasta 120 cm",
+                reproduction: "Gestación de 50 días, 2-5 cachorros por camada",
+                socialMedia: {
+                    instagram: "@fennec_fox",
+                    facebook: "Fennec Desert Fox",
+                    twitter: "@FennecFox"
+                }
+            },
+            serpiente_cascabel: {
+                name: "Serpiente de Cascabel",
+                emoji: "🐍",
+                classification: "Reptil - Viperidae",
+                physicalCharacteristics: {
+                    size: "60-250 cm de longitud",
+                    weight: "1-4.5 kg",
+                    color: "Marrón con patrones diamantados",
+                    skin: "Escamas queratinizadas",
+                    bodyParts: "Cascabel en la cola, colmillos huecos, fosetas termorreceptoras"
+                },
+                habitat: "Desiertos y zonas áridas de América",
+                diet: "Carnívoro - Roedores, aves, lagartijas",
+                behavior: "Emboscada, agita cascabel como advertencia, detecta calor corporal",
+                reproduction: "Ovovivípara, 10-20 crías por camada",
+                socialMedia: {
+                    instagram: "@rattlesnake_desert",
+                    facebook: "Rattlesnake Warning",
+                    twitter: "@RattlesnakeDesert"
+                }
+            },
+            suricata: {
+                name: "Suricata",
+                emoji: "🦫",
+                classification: "Mamífero - Herpestidae",
+                physicalCharacteristics: {
+                    size: "25-35 cm de longitud",
+                    weight: "0.6-1 kg",
+                    color: "Gris claro con rayas oscuras",
+                    skin: "Pelaje corto y denso",
+                    bodyParts: "Cola larga para equilibrio, garras para excavar, parches oscuros alrededor de los ojos"
+                },
+                habitat: "Desierto de Kalahari en África del Sur",
+                diet: "Omnívoro - Insectos, escorpiones, huevos, pequeños reptiles",
+                behavior: "Vive en colonias, sistema de centinelas, se para en dos patas",
+                reproduction: "Gestación de 11 semanas, 2-4 crías por camada",
+                socialMedia: {
+                    instagram: "@meerkat_sentinel",
+                    facebook: "Meerkat Colony",
+                    twitter: "@MeerkatWatch"
+                }
+            }
+        };
+
+        // Modal functionality
+        const modal = document.getElementById('animal-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalContent = document.getElementById('modal-content');
+        const closeModal = document.getElementById('close-modal');
+        const infoButtons = document.querySelectorAll('.info-btn');
+
+        infoButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const animalKey = button.dataset.animal;
+                const animal = animalData[animalKey];
+                
+                modalTitle.textContent = `${animal.emoji} ${animal.name}`;
+                
+                modalContent.innerHTML = `
+                    <div class="text-center mb-8">
+                        <span class="text-9xl">${animal.emoji}</span>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-6">
+                            <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-2xl">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3 flex items-center">
+                                    🧬 Clasificación
+                                </h3>
+                                <p class="text-gray-700 text-lg">${animal.classification}</p>
+                            </div>
+                            
+                            <div class="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-2xl">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3 flex items-center">
+                                    📏 Características Físicas
+                                </h3>
+                                <div class="space-y-2 text-gray-700">
+                                    <p><strong>Tamaño:</strong> ${animal.physicalCharacteristics.size}</p>
+                                    <p><strong>Peso:</strong> ${animal.physicalCharacteristics.weight}</p>
+                                    <p><strong>Color:</strong> ${animal.physicalCharacteristics.color}</p>
+                                    <p><strong>Piel:</strong> ${animal.physicalCharacteristics.skin}</p>
+                                    <p><strong>Características especiales:</strong> ${animal.physicalCharacteristics.bodyParts}</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-2xl">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3 flex items-center">
+                                    🏠 Hábitat
+                                </h3>
+                                <p class="text-gray-700 text-lg">${animal.habitat}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div class="bg-gradient-to-r from-red-50 to-pink-50 p-6 rounded-2xl">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3 flex items-center">
+                                    🍽️ Alimentación
+                                </h3>
+                                <p class="text-gray-700 text-lg">${animal.diet}</p>
+                            </div>
+                            
+                            <div class="bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-2xl">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3 flex items-center">
+                                    🎭 Comportamiento
+                                </h3>
+                                <p class="text-gray-700 text-lg">${animal.behavior}</p>
+                            </div>
+                            
+                            <div class="bg-gradient-to-r from-pink-50 to-red-50 p-6 rounded-2xl">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3 flex items-center">
+                                    👶 Reproducción
+                                </h3>
+                                <p class="text-gray-700 text-lg">${animal.reproduction}</p>
+                            </div>
+                            
+                            <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-2xl">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3 flex items-center">
+                                    📱 Síguenos en Redes
+                                </h3>
+                                <div class="flex space-x-4">
+                                    <a href="#" class="flex items-center space-x-2 bg-pink-500 text-white px-4 py-2 rounded-lg hover:bg-pink-600 transition-colors">
+                                        <span>📷</span>
+                                        <span>${animal.socialMedia.instagram}</span>
+                                    </a>
+                                    <a href="#" class="flex items-center space-x-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                                        <span>📘</span>
+                                        <span>${animal.socialMedia.facebook}</span>
+                                    </a>
+                                    <a href="#" class="flex items-center space-x-2 bg-cyan-500 text-white px-4 py-2 rounded-lg hover:bg-cyan-600 transition-colors">
+                                        <span>🐦</span>
+                                        <span>${animal.socialMedia.twitter}</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98f231cfa20721f6',t:'MTc2MDU2MTQ4Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
